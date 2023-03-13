@@ -108,6 +108,6 @@ This will output: <br>
 
 
 ## Citation:
-If you use cRegulon software or cRegulon associated concepts, please cite
+If you use cRegulon software or cRegulon associated concepts, please cite:
 
 Zhanying Feng, et al. Modeling combinatorial regulon from single cell gene expression and chromatin accessibility data. 2023.
