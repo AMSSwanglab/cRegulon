@@ -100,10 +100,10 @@ With the input of TF-TF combinatorial network (RAd4_CSI.txt), normalized TF-TG r
 source cRegulon.sh RAd4
 ```
 This will output: <br>
-1. TF combinatorial effects in all cRegulons: X.txt <br>
+1. TF combinatorial effects in each cRegulon: X.txt <br>
 2. cRegulon combination coefficients for scRNA-seq: H1.txt <br>
 3. cRegulon combination coefficients for scATAC-seq: H2.txt <br>
-4. TF modules of cRegulons: TFs (*TF.txt) and TF pairs (*TFPair.txt).
+4. TF module of each cRegulon: TFs (*TF.txt) and TF pairs (*TFPair.txt).
 5. Regulatory sub-network of each cRegulon: *SubNet.txt
 
 
