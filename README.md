@@ -95,7 +95,7 @@ source runCSI.sh RAd4
 ```
 This will generate normalized TF-TG regulatory strength file (RAd4_TRS.txt) and TF-TF combinatorial network (RAd4_CSI.txt).
 ## Step 4: Running cRegulon model
-With the input of TF-TF combinatorial network (C.txt), normalized TF-TG regulatory strength matrix (R.txt), gene expression matrix (GE.txt), and gene activity matrix (GA.txt), we run the following cRegulon model:
+With the input of TF-TF combinatorial network (RAd4_CSI.txt), normalized TF-TG regulatory strength matrix (RAd4_TRS.txt), gene expression matrix (RAd4_GE.txt), and gene activity matrix (RAd4_GA.txt), we run the following cRegulon model:
 ```bash
 source cRegulon.sh RAd4
 ```
