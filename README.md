@@ -78,7 +78,7 @@ The peaks are in the format of "chr_start_end". <br>
 We run the following script to make the gene expression matrix and gene activity matrix:
 
 ```bash
-source Preprocessing.sh RAd4
+source Preprocessing.sh RAd4 Mouse
 ```
 This process will produce gene expression file (RAd4_GE.txt) and gene activity file (RAd4_GA.txt)
 
