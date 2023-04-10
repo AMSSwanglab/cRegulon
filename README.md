@@ -85,13 +85,13 @@ This process will produce gene expression file (RAd4_GE.txt) and gene activity f
 ## Step 2: Constructing TF-TG regulatory network by pseudo-bulk strategy
 With the input files are (RAd4_scRNA.txt) and (RAd4_scATAC.txt), we run the following script:
 ```bash
-source PS_PECA.sh RAd4 mm10
+source PSPECA.sh RAd4 mm10
 ```
 This process will produce the TF-REs-TG triplets files (RAd4_network.txt) and TF-TG regulatory strength file (RAd4_TRS.txt).
 ## Step 3: Constructing TF-TF combinatorial network
 With the input TF-TG regulatory strength file (RAd4_TRS.txt), we run the following script:
 ```bash
-source runCSI.sh RAd4
+source CSI.sh RAd4
 ```
 This will generate normalized TF-TG regulatory strength file (RAd4_TRS.txt) and TF-TF combinatorial network (RAd4_CSI.txt).
 ## Step 4: Running cRegulon model
