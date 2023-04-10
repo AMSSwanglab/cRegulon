@@ -75,10 +75,10 @@ The typic input file (RAd4_scATAC.txt) of scATAC-seq data is a peak by cell coun
   </tr>
 </table>
 The peaks are in the format of "chr_start_end". <br>
-We run the following script to make the gene expression matrix and gene activity matrix:
+We run the following script to make the gene expression matrix and gene activity matrix (current we support hg38 and mm10):
 
 ```bash
-source Preprocessing.sh RAd4 Mouse
+source Preprocessing.sh RAd4 mm10
 ```
 This process will produce gene expression file (RAd4_GE.txt) and gene activity file (RAd4_GA.txt)
 
