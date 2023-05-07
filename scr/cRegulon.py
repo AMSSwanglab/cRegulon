@@ -46,7 +46,7 @@ for i in range(0, rep):
     X0 = model.fit_transform(C)
     X1 = model.components_
     err1[i] = LA.norm(C - np.dot(X0, X1), ord='fro')
-model = NMF(n_components=K, init='random', random_state=np.argmin(err1), solver='cd', max_iter=1000)
+model = NMF(n_components=K, init='random', random_state=np.argmin(err1), solver='cd', max_iter=10000)
 X0 = model.fit_transform(C)
 X1 = model.components_
 
@@ -58,7 +58,7 @@ for i in range(0, rep):
     W10 = model.fit_transform(E)
     H10 = model.components_
     err1[i] = LA.norm(E - np.dot(W10, H10), ord='fro')
-model = NMF(n_components=K, init='random', random_state=np.argmin(err1), solver='cd', max_iter=1000)
+model = NMF(n_components=K, init='random', random_state=np.argmin(err1), solver='cd', max_iter=10000)
 W10 = model.fit_transform(E)
 H10 = model.components_
 
@@ -70,7 +70,7 @@ for i in range(0, rep):
     W20 = model.fit_transform(O)
     H20 = model.components_
     err2[i] = LA.norm(O - np.dot(W20, H20), ord='fro')
-model = NMF(n_components=K, init='random', random_state=np.argmin(err2), solver='cd', max_iter=1000)
+model = NMF(n_components=K, init='random', random_state=np.argmin(err2), solver='cd', max_iter=10000)
 W20 = model.fit_transform(O)
 H20 = model.components_
 
