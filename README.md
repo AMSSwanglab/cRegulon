@@ -78,36 +78,23 @@ The peaks are in the format of "chr_start_end". <br>
 We run the following script to make the gene expression matrix and gene activity matrix (current we support hg38 and mm10):
 
 ```bash
-source Preprocessing.sh RAd4 mm10
+source runNet.sh CL hg38
 ```
-This process will produce gene expression file (RAd4_GE.txt) and gene activity file (RAd4_GA.txt)
+This process will produce GRN files (network.txt, TFName.txt, TGName.txt, TRS.txt) for each cell cluster.
 
-## Step 2: Constructing TF-TG regulatory network by pseudo-bulk strategy
-With the input files are (RAd4_scRNA.txt) and (RAd4_scATAC.txt), we run the following script:
-```bash
-source PSPECA.sh RAd4 mm10
-```
-This process will produce the TF-REs-TG triplets files (RAd4_network.txt) and TF-TG regulatory strength file (RAd4_TRS.txt).
-## Step 3: Constructing TF-TF combinatorial network
-With the input TF-TG regulatory strength file (RAd4_TRS.txt), we run the following script:
-```bash
-source CSI.sh RAd4
-```
-This will generate normalized TF-TG regulatory strength file (RAd4_TRS.txt) and TF-TF combinatorial network (RAd4_CSI.txt).
-## Step 4: Running cRegulon model
+## Step 2: Running cRegulon model
 With the input of TF-TF combinatorial network (RAd4_CSI.txt), normalized TF-TG regulatory strength matrix (RAd4_TRS.txt), gene expression matrix (RAd4_GE.txt), and gene activity matrix (RAd4_GA.txt), we run the following cRegulon model:
 ```bash
-source cRegulon.sh RAd4
+python cRegulon.py CL hg38
 ```
 This will output: <br>
 1. TF combinatorial effects in each cRegulon: X.txt <br>
-2. cRegulon combination coefficients for scRNA-seq: H1.txt <br>
-3. cRegulon combination coefficients for scATAC-seq: H2.txt <br>
-4. TF module of each cRegulon: TFs (*TF.txt) and TF pairs (*TFPair.txt).
+2. Association matrix between cell clusters and cRegulons: L.txt <br>
+3. TF module of each cRegulon: TFs (*TF.txt) and TF pairs (*TFPair.txt).
 5. Regulatory sub-network of each cRegulon: *SubNet.txt
 
 
 ## Citation:
 If you use cRegulon software or cRegulon associated concepts, please cite:
 
-Zhanying Feng, et al. Modeling combinatorial regulon from single cell gene expression and chromatin accessibility data. 2023.
+Zhanying Feng, et al. Modeling combinatorial regulation from single-cell multi-omics provides units underpinning cell type landscape. 2024.
