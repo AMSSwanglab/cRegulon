@@ -15,7 +15,7 @@ cd cRegulon-master
 wget https://www.dropbox.com/s/0h1wxlu7iqheajo/cRegulon.tar.gz
 tar -xzvf cRegulon.tar.gz
 ```
-## Step 1: single cell data preprocessing
+## Step 1: GRN construction
 The typic input file (RAd4_scRNA.txt) of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
