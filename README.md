@@ -21,9 +21,9 @@ The typic input file (CL_scRNA.txt) of scRNA-seq data is a gene by cell count ma
 <table>
   <tr>
     <td>scRNA</td>
-    <td>Cell1</td>
-    <td>Cell2</td>
-    <td>Cell3</td>
+    <td>RNACell1</td>
+    <td>RNACell2</td>
+    <td>RNACell3</td>
   </tr>
   <tr>
     <td>Gene1</td>
@@ -48,10 +48,10 @@ The typic input file (CL_scATAC.txt) of scATAC-seq data is a peak by cell count 
 <table>
   <tr>
     <td>scATAC</td>
-    <td>Cell1</td>
-    <td>Cell2</td>
-    <td>Cell3</td>
-    <td>Cell4</td>
+    <td>ATACell1</td>
+    <td>ATACell2</td>
+    <td>ATACell3</td>
+    <td>ATACell4</td>
   </tr>
   <tr>
     <td>Peak1</td>
