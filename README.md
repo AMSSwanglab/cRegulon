@@ -114,7 +114,7 @@ The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as f
 </table>
 
 ### Step 1: GRN construction
-We run the following script to make the gene expression matrix and gene activity matrix (current we support hg38 and mm10):
+We run the following script to construct regulatory network for each cell cluster (current we support hg38 and mm10):
 
 ```bash
 source runNet.sh CL hg38
@@ -122,13 +122,13 @@ source runNet.sh CL hg38
 This process will produce GRN files (network.txt, TFName.txt, TGName.txt, TRS.txt) for each cell cluster.
 
 ### Step 2: Running cRegulon model
-With the input of TF-TF combinatorial network (RAd4_CSI.txt), normalized TF-TG regulatory strength matrix (RAd4_TRS.txt), gene expression matrix (RAd4_GE.txt), and gene activity matrix (RAd4_GA.txt), we run the following cRegulon model:
+We run the following script of cRegulon model:
 ```bash
 python cRegulon.py CL hg38
 ```
 This will output: <br>
 1. TF combinatorial effects in each cRegulon: X.txt <br>
-2. Association matrix between cell clusters and cRegulons: L.txt <br>
+2. Association matrix between cell clusters and cRegulons: A.txt <br>
 3. TF module of each cRegulon: TFs (*TF.txt) and TF pairs (*TFPair.txt).
 5. Regulatory sub-network of each cRegulon: *SubNet.txt
 
