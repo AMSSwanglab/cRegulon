@@ -15,7 +15,8 @@ cd cRegulon-master
 wget https://www.dropbox.com/s/0h1wxlu7iqheajo/cRegulon.tar.gz
 tar -xzvf cRegulon.tar.gz
 ```
-## Step 1: GRN construction
+## Training mode of cRegulon
+### Step 1: GRN construction
 The typic input file (CL_scRNA.txt) of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
@@ -82,7 +83,7 @@ source runNet.sh CL hg38
 ```
 This process will produce GRN files (network.txt, TFName.txt, TGName.txt, TRS.txt) for each cell cluster.
 
-## Step 2: Running cRegulon model
+### Step 2: Running cRegulon model
 With the input of TF-TF combinatorial network (RAd4_CSI.txt), normalized TF-TG regulatory strength matrix (RAd4_TRS.txt), gene expression matrix (RAd4_GE.txt), and gene activity matrix (RAd4_GA.txt), we run the following cRegulon model:
 ```bash
 python cRegulon.py CL hg38
@@ -93,6 +94,7 @@ This will output: <br>
 3. TF module of each cRegulon: TFs (*TF.txt) and TF pairs (*TFPair.txt).
 5. Regulatory sub-network of each cRegulon: *SubNet.txt
 
+## Annotation mode of cRegulon
 
 ## Citation:
 If you use cRegulon software or cRegulon associated concepts, please cite:
