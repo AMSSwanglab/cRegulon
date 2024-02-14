@@ -95,7 +95,7 @@ The typic cell type meta file (CL_scRNA_Cluster.txt) of scRNA-seq data is as fol
 The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as follows: <br>
 <table>
   <tr>
-    <td>ATACCell1</td>
+    <td>ATACell1</td>
     <td>C2</td>
   </tr>
   <tr>
@@ -105,6 +105,10 @@ The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as f
   <tr>
     <td>ATACell3</td>
     <td>C1</td>
+  </tr>
+  <tr>
+    <td>ATACell4</td>
+    <td>C2</td>
   </tr>
 </table>
 ### Step 1: GRN construction
