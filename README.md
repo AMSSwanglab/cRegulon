@@ -112,6 +112,7 @@ The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as f
     <td>C2</td>
   </tr>
 </table>
+
 ### Step 1: GRN construction
 We run the following script to make the gene expression matrix and gene activity matrix (current we support hg38 and mm10):
 
