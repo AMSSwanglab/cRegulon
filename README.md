@@ -16,7 +16,7 @@ wget https://www.dropbox.com/s/0h1wxlu7iqheajo/cRegulon.tar.gz
 tar -xzvf cRegulon.tar.gz
 ```
 ## Training mode of cRegulon
-### Input data
+### Input single cell data
 The typic input file (CL_scRNA.txt) of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
@@ -76,7 +76,37 @@ The typic input file (CL_scATAC.txt) of scATAC-seq data is a peak by cell count 
   </tr>
 </table>
 The peaks are in the format of "chr_start_end". <br>
-
+### Input cell type meta data
+The typic cell type meta file (CL_scRNA_Cluster.txt) of scRNA-seq data is as follows: <br>
+<table>
+  <tr>
+    <td>RNACell1</td>
+    <td>C1</td>
+  </tr>
+  <tr>
+    <td>RNACell2</td>
+    <td>C2</td>
+  </tr>
+  <tr>
+    <td>RNACell3</td>
+    <td>C3</td>
+  </tr>
+</table>
+The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as follows: <br>
+<table>
+  <tr>
+    <td>ATACCell1</td>
+    <td>C2</td>
+  </tr>
+  <tr>
+    <td>ATACell2</td>
+    <td>C3</td>
+  </tr>
+  <tr>
+    <td>ATACell3</td>
+    <td>C1</td>
+  </tr>
+</table>
 ### Step 1: GRN construction
 We run the following script to make the gene expression matrix and gene activity matrix (current we support hg38 and mm10):
 
