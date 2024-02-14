@@ -76,6 +76,7 @@ The typic input file (CL_scATAC.txt) of scATAC-seq data is a peak by cell count 
   </tr>
 </table>
 The peaks are in the format of "chr_start_end". <br>
+
 ### Input cell type meta data
 The typic cell type meta file (CL_scRNA_Cluster.txt) of scRNA-seq data is as follows: <br>
 <table>
