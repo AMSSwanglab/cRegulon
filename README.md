@@ -133,7 +133,10 @@ This will output: <br>
 5. Regulatory sub-network of each cRegulon: *SubNet.txt
 
 ## Annotation mode of cRegulon
-
+We run the following script to annotate cells of certain cell type:
+```bash
+python Annot.py CL
+```
 ## Citation:
 If you use cRegulon software or cRegulon associated concepts, please cite:
 
