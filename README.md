@@ -113,13 +113,23 @@ The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as f
   </tr>
 </table>
 
-### Step 1: GRN construction
+### Step 1: preprocessing and pseudo bulk
+We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for each cell cluster:
+
+```bash
+#cRegulon_prep.py [-h] [--name NAME] --rna RNA --rna_meta RNA_META --atac ATAC --atac_meta ATAC_META
+cRegulon_prep.py --name RA --rna ./data/RA/scRNA/ --rna_meta ./data/RA/RA_scRNA_Cluster.txt --atac ./data/RA/scATAC/ --atac_meta ./data/RA/RA_scATAC_Cluster.txt
+```
+This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **PseudoBulk** folder.
+
+### Step 2: GRN construction
 We run the following script to construct regulatory network for each cell cluster (current we support hg38 and mm10):
 
 ```bash
-source runNet.sh CL hg38
+#cRegulon_prep.py [-h] [--name NAME] --rna RNA --rna_meta RNA_META --atac ATAC --atac_meta ATAC_META
+cRegulon_prep.py --name RA --rna ./data/RA/scRNA/ --rna_meta ./data/RA/RA_scRNA_Cluster.txt --atac ./data/RA/scATAC/ --atac_meta ./data/RA/RA_scATAC_Cluster.txt
 ```
-This process will produce GRN files (network.txt, TFName.txt, TGName.txt, TRS.txt) for each cell cluster.
+This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster.
 
 ### Step 2: Running cRegulon model
 We run the following script of cRegulon model:
