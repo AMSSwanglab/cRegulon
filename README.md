@@ -131,7 +131,7 @@ cRegulon_prep.py --name RA --rna ./data/RA/scRNA/ --rna_meta ./data/RA/RA_scRNA_
 ```
 This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster.
 
-### Step 2: Running cRegulon model
+### Step 3: Running cRegulon model
 We run the following script of cRegulon model:
 ```bash
 python cRegulon.py CL hg38
