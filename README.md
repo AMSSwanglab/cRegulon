@@ -117,8 +117,8 @@ The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as f
 We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for each cell cluster:
 
 ```bash
-#cRegulon_prep.py [-h] [--name NAME] --rna RNA --rna_meta RNA_META --atac ATAC --atac_meta ATAC_META
-cRegulon_prep.py --name RA --rna ./data/RA/scRNA/ --rna_meta ./data/RA/RA_scRNA_Cluster.txt --atac ./data/RA/scATAC/ --atac_meta ./data/RA/RA_scATAC_Cluster.txt
+#cRegulon_prep.py [-h] [--name NAME] --rna RNA --rna_meta RNA_META --atac ATAC --atac_meta ATAC_META --species SPECIES (human or mouse)
+cRegulon_prep.py --name RA --rna ./data/RA/scRNA/ --rna_meta ./data/RA/RA_scRNA_Cluster.txt --atac ./data/RA/scATAC/ --atac_meta ./data/RA/RA_scATAC_Cluster.txt --species mouse
 ```
 This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **PseudoBulk** folder (The GRN construction is independent for each cell cluster, we can do it **parallelly**).
 
