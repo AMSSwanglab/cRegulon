@@ -105,7 +105,7 @@ The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as f
   </tr>
   <tr>
     <td>ATACellID3</td>
-    <td>C1</td>
+    <td>RAC1</td>
   </tr>
   <tr>
     <td>ATACellID4</td>
