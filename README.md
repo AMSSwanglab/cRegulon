@@ -120,7 +120,7 @@ We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for 
 #cRegulon_prep.py [-h] [--name NAME] --rna RNA --rna_meta RNA_META --atac ATAC --atac_meta ATAC_META --species SPECIES (human or mouse)
 cRegulon_prep.py --name RA --rna ./data/RA/scRNA/ --rna_meta ./data/RA/RA_scRNA_Cluster.txt --atac ./data/RA/scATAC/ --atac_meta ./data/RA/RA_scATAC_Cluster.txt --species mouse
 ```
-This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **PseudoBulk** folder (The GRN construction is independent for each cell cluster, we can do it **parallelly**).
+This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **PseudoBulk** folder.
 
 ### Step 2: GRN construction
 We run the following script to construct regulatory network for each cell cluster (current we support hg38 and mm10):
@@ -132,7 +132,7 @@ do
   python3 cRegulon_grn.py -n RA -ct ${c} -g mm10 -p 20
 done
 ```
-This process will produce GRN files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **Networks** folder.
+This process will produce GRN files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **Networks** folder (The GRN construction is independent for each cell cluster, we can do it **parallelly**).
 
 ### Step 3: Running cRegulon model
 We run the following script of cRegulon model:
