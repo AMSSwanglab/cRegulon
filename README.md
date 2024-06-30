@@ -21,9 +21,9 @@ The typic input file (CL_scRNA.txt) of scRNA-seq data is a gene by cell count ma
 <table>
   <tr>
     <td>scRNA</td>
-    <td>RNACell1</td>
-    <td>RNACell2</td>
-    <td>RNACell3</td>
+    <td>RNACellID1</td>
+    <td>RNACellID2</td>
+    <td>RNACellID3</td>
   </tr>
   <tr>
     <td>Gene1</td>
@@ -48,10 +48,10 @@ The typic input file (CL_scATAC.txt) of scATAC-seq data is a peak by cell count 
 <table>
   <tr>
     <td>scATAC</td>
-    <td>ATACell1</td>
-    <td>ATACell2</td>
-    <td>ATACell3</td>
-    <td>ATACell4</td>
+    <td>ATACellID1</td>
+    <td>ATACellID2</td>
+    <td>ATACellID3</td>
+    <td>ATACellID4</td>
   </tr>
   <tr>
     <td>Peak1</td>
@@ -81,35 +81,35 @@ The peaks are in the format of "chr_start_end". <br>
 The typic cell type meta file (CL_scRNA_Cluster.txt) of scRNA-seq data is as follows: <br>
 <table>
   <tr>
-    <td>RNACell1</td>
-    <td>C1</td>
+    <td>RNACellID1</td>
+    <td>RAC1</td>
   </tr>
   <tr>
-    <td>RNACell2</td>
-    <td>C2</td>
+    <td>RNACellID2</td>
+    <td>RAC2</td>
   </tr>
   <tr>
-    <td>RNACell3</td>
-    <td>C3</td>
+    <td>RNACellID3</td>
+    <td>RAC3</td>
   </tr>
 </table>
 The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as follows: <br>
 <table>
   <tr>
-    <td>ATACell1</td>
-    <td>C2</td>
+    <td>ATACellID1</td>
+    <td>RAC2</td>
   </tr>
   <tr>
-    <td>ATACell2</td>
-    <td>C3</td>
+    <td>ATACellID2</td>
+    <td>RAC3</td>
   </tr>
   <tr>
-    <td>ATACell3</td>
+    <td>ATACellID3</td>
     <td>C1</td>
   </tr>
   <tr>
-    <td>ATACell4</td>
-    <td>C2</td>
+    <td>ATACellID4</td>
+    <td>RAC2</td>
   </tr>
 </table>
 
