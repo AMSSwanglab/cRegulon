@@ -136,19 +136,24 @@ This process will produce GRN files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) f
 
 ### Step 3: Running cRegulon model
 We run the following script of cRegulon model:
+If we already know or have some expection of the cRegulon number, we can provide this number to cRegulon. For example, we have 9 cRegulons for RA, then we run this script:
 ```bash
-python cRegulon_model.py RA hg38
+python3 cRegulon_model.py -n RA -mn 9
 ```
-This will output: <br>
-1. TF combinatorial effects in each cRegulon: X.txt <br>
-2. Association matrix between cell clusters and cRegulons: A.txt <br>
-3. TF module of each cRegulon: TFs (*TF.txt) and TF pairs (*TFPair.txt).
-5. Regulatory sub-network of each cRegulon: *SubNet.txt
+If we don't know the cRegulon number, we can provide a range of numbers and cRegulon will use elbow rule to select an optimal number. For example, we guess there may be 4-20 cRegulons for RA, then we run this script:
+```bash
+python3 cRegulon_model.py -n RA -mmax 4 -mmin 20
+```
+This will output a folder in "Results" with name you specify: "./RA/" <br>
+1. TF combinatorial effects in each cRegulon: ./Results/RA/X.txt <br>
+2. Association matrix between cell clusters and cRegulons: ./Results/RA/A.txt <br>
+3. TF module of each cRegulon: ./Results/RA/*TFModule.txt <br>
+4. Annotation of each cell cluster with cRegulons: ./Results/RA/Annotation/*subnetwork.txt
 
 ## Annotation mode of cRegulon
-We run the following script to annotate cells of certain cell type:
+If you only have scRNA-seq data, We run the following script to annotate cells with our pre-computed cRegulons from atlas-level dataset:
 ```bash
-python Annot.py CL
+python cRegulon_annot.py your_path_to_sc_rna
 ```
 ## Citation:
 If you use cRegulon software or cRegulon associated concepts, please cite:
