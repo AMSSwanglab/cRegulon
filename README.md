@@ -138,10 +138,12 @@ This process will produce GRN files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) f
 We run the following script of cRegulon model:
 If we already know or have some expection of the cRegulon number, we can provide this number to cRegulon. For example, we have 9 cRegulons for RA, then we run this script:
 ```bash
+#cRegulon_model.py [-h] --name NAME --module_number MODULE_NUMBER
 python3 cRegulon_model.py -n RA -mn 9
 ```
 If we don't know the cRegulon number, we can provide a range of numbers and cRegulon will use elbow rule to select an optimal number. For example, we guess there may be 4-20 cRegulons for RA, then we run this script:
 ```bash
+#cRegulon_model.py [-h] --name NAME --module_max MODULE_MAX --module_min MODULE_MIN
 python3 cRegulon_model.py -n RA -mmax 4 -mmin 20
 ```
 This will output a folder in "Results" with name you specify: "./RA/" <br>
