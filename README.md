@@ -132,7 +132,7 @@ do
   python3 cRegulon_grn.py -n RA -ct ${c} -g mm10 -p 20
 done
 ```
-This process will produce GRN files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **Networks** folder (The GRN construction is independent for each cell cluster, we can do it **parallelly**).
+This process will produce GRN files (*network.txt, TFTG_regulationScore.txt, TFName.txt, TGName.txt) for each cell cluster in the **Networks** folder (The GRN construction is independent for each cell cluster, we can do it **parallelly**).
 
 ### Step 3: Running cRegulon model
 We run the following script of cRegulon model:
