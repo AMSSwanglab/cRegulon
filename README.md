@@ -118,7 +118,7 @@ We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for 
 
 ```bash
 #cRegulon_prep.py [-h] [--name NAME] --rna RNA --rna_meta RNA_META --atac ATAC --atac_meta ATAC_META --species SPECIES (human or mouse)
-cRegulon_prep.py --name RA --rna ./data/RA/scRNA/ --rna_meta ./data/RA/RA_scRNA_Cluster.txt --atac ./data/RA/scATAC/ --atac_meta ./data/RA/RA_scATAC_Cluster.txt --species mouse
+python3 cRegulon_prep.py --name RA --rna ./example_data/RA/scRNA/ --rna_meta ./example_data/RA/RA_scRNA_Cluster.txt --atac ./example_data/RA/scATAC/ --atac_meta ./example_data/RA/RA_scATAC_Cluster.txt -g mouse
 ```
 This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **PseudoBulk** folder.
 
@@ -155,7 +155,7 @@ This will output a folder in "Results" with name you specify: "./RA/" <br>
 ## Annotation mode of cRegulon
 If you only have scRNA-seq data, We run the following script to annotate cells with our pre-computed cRegulons from atlas-level dataset:
 ```bash
-python cRegulon_annot.py your_path_to_sc_rna
+python cRegulon_annot.py ./example_data/PBMC_scRNA.txt human
 ```
 ## Citation:
 If you use cRegulon software or cRegulon associated concepts, please cite:
