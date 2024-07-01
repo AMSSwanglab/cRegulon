@@ -155,7 +155,8 @@ This will output a folder in "Results" with name you specify: "./RA/" <br>
 ## Annotation mode of cRegulon
 If you only have scRNA-seq data, We run the following script to annotate cells with our pre-computed cRegulons from atlas-level dataset:
 ```bash
-python cRegulon_annot.py --name PBMC --rna ./example_data/PBMC_scRNA.txt --species human
+#cRegulon_annot.py [-h] --name NAME --path_rna PATH_RNA --module_number MODULE_NUMBER
+python3 cRegulon_annot.py --name PBMC --path_rna ./example_data/PBMC_scRNA.txt --module_number 12
 ```
 ## Citation:
 If you use cRegulon software or cRegulon associated concepts, please cite:
