@@ -22,7 +22,7 @@ tar -xzvf cRegulon.tar.gz
 ./Networks/<br>
 ./Results/**
 ## Training mode of cRegulon
-### Input single cell data
+### Input single cell data (example dataset: ./example_data/RA/)
 The typic input file (CL_scRNA.txt) of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
