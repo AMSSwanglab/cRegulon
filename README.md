@@ -12,7 +12,7 @@ This is cRegulon software: an optimization model an optimization model for model
 wget https://github.com/fengzhanying/cRegulon/archive/master.zip
 unzip master.zip
 cd cRegulon-master
-wget -O cRegulon.tar.gz https://figshare.com/ndownloader/files/47411650
+wget -O cRegulon.tar.gz https://figshare.com/ndownloader/files/47411266
 tar -xzvf cRegulon.tar.gz
 ```
 **After installation, there will be 6 folder to store necessary data, intermediate results, and final results: <br>
