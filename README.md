@@ -23,7 +23,7 @@ tar -xzvf cRegulon.tar.gz
 ./Results/**
 ## Training mode of cRegulon
 ### Input single cell data (example dataset: ./example_data/RA/)
-The typic input file (CL_scRNA.txt) of scRNA-seq data is a gene by cell count matrix: <br>
+The typic input file of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
     <td>scRNA</td>
@@ -50,7 +50,7 @@ The typic input file (CL_scRNA.txt) of scRNA-seq data is a gene by cell count ma
     <td>0</td>
   </tr>
 </table>
-The typic input file (CL_scATAC.txt) of scATAC-seq data is a peak by cell count matrix:
+The typic input file of scATAC-seq data is a peak by cell count matrix:
 <table>
   <tr>
     <td>scATAC</td>
