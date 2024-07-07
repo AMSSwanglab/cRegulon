@@ -2,7 +2,7 @@ import os
 import gzip
 import numpy as np
 from scipy.sparse import csr_matrix
-
+import pandas as pd
 import argparse
 import sys
 import os
@@ -67,8 +67,6 @@ def Read10X_ATAC(path):
 		count = csr_matrix((count[2], (count[0]-1, count[1]-1)), shape=(len(pk), len(bc)))
 		return pk, bc, count
 
-#peak,cell,data = Read10X_ATAC("./scATAC/")
-
 def Read10X_RNA(path):
 	try:
 		with gzip.open(path+'/features.tsv.gz', 'rt') as f:
@@ -109,6 +107,13 @@ def Read10X_RNA(path):
 		count = csr_matrix((count[2], (count[0]-1, count[1]-1)), shape=(len(gs), len(bc)))
 		return gs, bc, count
 
+def ReadTXT(path):
+	df = pd.read_csv(path, index_col=0, sep='\t')
+	row_names = df.index.tolist()
+	column_names = df.columns.tolist()
+	matrix = csr_matrix(df.values)
+	return row_names, column_names, matrix
+
 def PseudoBulk(name,rna,rna_meta,atac,atac_meta):
 	folder = "./PseudoBulk/"
 	f = open(rna_meta)
@@ -117,7 +122,10 @@ def PseudoBulk(name,rna,rna_meta,atac,atac_meta):
 	tmeta = [meta[i].strip('\n').split('\t')[1] for i in range(len(meta))]
 	ct = list(set(tmeta));ct.sort()
 	print("We are processing scRNA-seq data with "+str(len(ct))+" cell clusters...")
-	gene,cell,data = Read10X_RNA(rna)
+	if os.path.isfile(rna):
+		gene,cell,data = ReadTXT(rna)
+	else:
+		gene,cell,data = Read10X_RNA(rna)
 	gc = open(folder+name+"_"+'CellType.txt','w')
 	for i in range(len(ct)):
 		gc.write(name+"_"+ct[i]+'\n')
@@ -136,7 +144,10 @@ def PseudoBulk(name,rna,rna_meta,atac,atac_meta):
 	tmeta = [meta[i].strip('\n').split('\t')[1] for i in range(len(meta))]
 	ct = list(set(tmeta));ct.sort()
 	print("We are processing scATAC-seq data with "+str(len(ct))+" cell clusters...")
-	peak,cell,data = Read10X_ATAC(atac)
+	if os.path.isfile(atac):
+		peak,cell,data = ReadTXT(atac)
+	else:
+		peak,cell,data = Read10X_ATAC(atac)
 	for i in range(len(ct)):
 		Indel = [cell.index(cmeta[indel]) for indel,x in enumerate(tmeta) if x==ct[i]]
 		datac = data[:,Indel]
@@ -171,24 +182,29 @@ def TFAS(name,rna,rna_meta,genome):
 	cmeta = [meta[i].strip('\n').split('\t')[0] for i in range(len(meta))]
 	tmeta = [name+"_"+meta[i].strip('\n').split('\t')[1] for i in range(len(meta))]
 
-	gene,cell,data = Read10X_RNA(rna)
+	if os.path.isfile(rna):
+		gene,cell,data = ReadTXT(rna)
+	else:
+		gene,cell,data = Read10X_RNA(rna)
 	cindex = [cell.index(cmeta[i]) for i in range(len(cmeta))];data = data[:,cindex]
 	Indel_ct = [[] for c in range(len(ct))]
 	for i in range(len(cmeta)):
 		Indel_ct[ct.index(tmeta[i])].append(i)
 
-	AllTFAS = []
+	AllTFAS = [];TFs = []
 	for i in range(len(TF)):
-		AllTFAS.append([])
-		indel = gene.index(TF[i])
-		for c in range(len(ct)):
-			e1 = np.mean(data[indel][:,Indel_ct[c]])
-			e2 = np.mean(np.delete(data[indel].toarray(),Indel_ct[c]))
-			AllTFAS[i].append(TFC(e1,e2))
+		if TF[i] in gene:
+			alltfas = [];TFs.append(TF[i])
+			indel = gene.index(TF[i])
+			for c in range(len(ct)):
+				e1 = np.mean(data[indel][:,Indel_ct[c]])
+				e2 = np.mean(np.delete(data[indel].toarray(),Indel_ct[c]))
+				alltfas.append(TFC(e1,e2))
+			AllTFAS.append(alltfas)
 	g = open("./PseudoBulk/"+name+"_TFES.txt",'w')
 	g.write(name+"\t"+"\t".join(ct)+'\n')
-	for i in range(len(TF)):
-		g.write(TF[i])
+	for i in range(len(TFs)):
+		g.write(TFs[i])
 		for c in range(len(ct)):
 			g.write("\t"+str(AllTFAS[i][c]))
 		g.write("\n")
