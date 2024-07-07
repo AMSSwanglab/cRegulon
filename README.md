@@ -15,12 +15,12 @@ cd cRegulon-master
 wget -O cRegulon.tar.gz https://figshare.com/ndownloader/files/47411266
 tar -xzvf cRegulon.tar.gz
 ```
-**After installation, there will be 6 folder to store necessary data, intermediate results, and final results: <br>
+***After installation, there will be 6 folder to store necessary data, intermediate results, and final results: <br>
 ./Data/<br> 
 ./CSI/ <br>
 ./PseudoBulk/<br>
 ./Networks/<br>
-./Results/**
+./Results/***
 ## Training mode of cRegulon
 ### Input single cell data
 The typic input file of scRNA-seq data is a gene by cell count matrix: <br>
