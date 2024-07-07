@@ -22,7 +22,7 @@ tar -xzvf cRegulon.tar.gz
 ./Networks/<br>
 ./Results/**
 ## Training mode of cRegulon
-### Input single cell data (example dataset: ./example_data/RA/)
+### Input single cell data
 The typic input file of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
@@ -82,9 +82,10 @@ The typic input file of scATAC-seq data is a peak by cell count matrix:
   </tr>
 </table>
 The peaks are in the format of "chr_start_end". <br>
+***In practice, the file of single cell dataset can be the 10x folder format (example dataset: ./example_data/RA/) or a matrix txt format (example dataset: ./example_data/CL). In this tutorial, we use RA dataset for demonstration.***
 
 ### Input cell type meta data
-The typic cell type meta file (CL_scRNA_Cluster.txt) of scRNA-seq data is as follows: <br>
+The typic cell type meta file (./example_data/RA/RA_scRNA_Cluster.txt) of scRNA-seq data is as follows: <br>
 <table>
   <tr>
     <td>RNACellID1</td>
@@ -99,7 +100,7 @@ The typic cell type meta file (CL_scRNA_Cluster.txt) of scRNA-seq data is as fol
     <td>RAC3</td>
   </tr>
 </table>
-The typic cell type meta file (CL_scATAC_Cluster.txt) of scATAC-seq data is as follows: <br>
+The typic cell type meta file (./example_data/RA/RA_scATAC_Cluster.txt) of scATAC-seq data is as follows: <br>
 <table>
   <tr>
     <td>ATACellID1</td>
