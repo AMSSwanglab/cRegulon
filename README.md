@@ -84,7 +84,7 @@ The typic input file of scATAC-seq data is a peak by cell count matrix:
 The peaks are in the format of "chr_start_end". <br>
 <br>
 
-***In practice, the file of single cell dataset can be the 10x folder format (example dataset: ./example_data/RA/) or a matrix txt format (example dataset: ./example_data/CL). In this tutorial, we use RA dataset for demonstration.***
+***In practice, the file of single cell dataset can be the 10x folder format (example dataset: ./example_data/RA/) or a matrix txt format (example dataset: ./example_data/CL/). In this tutorial, we use RA dataset for demonstration.***
 
 ### Input cell type meta data
 The typic cell type meta file (./example_data/RA/RA_scRNA_Cluster.txt) of scRNA-seq data is as follows: <br>
