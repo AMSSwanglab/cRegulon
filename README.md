@@ -135,13 +135,13 @@ The typic cell type meta file (./example_data/RA/RA_scATAC_Cluster.txt) of scATA
   </tr>
 </table>
 
-## cRegulon has three main modes, which are three steps of cRegulon model
+### cRegulon has three main modes, which are three steps of cRegulon model
 ```bash
-python3 cRegulon.py {prep,grn,model,annot} ...
+python3 cRegulon.py {prep,grn,model} ...
 ```
-prep: Preprocessing mode <br>
-grn: GRN mode <br>
-model: Model mode <br>
+\ prep: Preprocessing mode <br>
+\ grn: GRN mode <br>
+\ model: Model mode <br>
 
 ### Step 1: preprocessing and pseudo bulk (***prep mode***)
 We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for each cell cluster:
