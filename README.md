@@ -27,7 +27,8 @@ tar -xzvf cRegulonData.tar.gz
 wget -O cRegulonExample.tar.gz https://figshare.com/ndownloader/files/47411266
 tar -xzvf cRegulonExample.tar.gz
 ```
-***After downloading, there will be 5 folders that store necessary data, intermediate results, and final results of example: <br>
+***After downloading, there will be 5 folders that store raw data, intermediate results, and final results of example: <br>
+./example_data/ <br>
 ./CSI/ <br>
 ./PseudoBulk/<br>
 ./Networks/<br>
