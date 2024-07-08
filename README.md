@@ -21,8 +21,8 @@ tar -xzvf cRegulon.tar.gz
 ./PseudoBulk/<br>
 ./Networks/<br>
 ./Results/***
-## Training mode of cRegulon
-### Input single cell data
+
+### Input single cell data of cRegulon
 The typic input file of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
@@ -122,7 +122,8 @@ The typic cell type meta file (./example_data/RA/RA_scATAC_Cluster.txt) of scATA
   </tr>
 </table>
 
-### Step 1: preprocessing and pseudo bulk
+## cRegulon has three main modes, which are three steps of cRegulon model
+### Step 1: preprocessing and pseudo bulk (***prep mode***)
 We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for each cell cluster:
 
 ```bash
