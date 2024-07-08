@@ -129,7 +129,6 @@ python3 cRegulon.py {prep,grn,model,annot} ...
 prep: Preprocessing mode <br>
 grn: GRN mode <br>
 model: Model mode <br>
-annot: Annotation mode <br>
 
 ### Step 1: preprocessing and pseudo bulk (***prep mode***)
 We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for each cell cluster:
@@ -144,10 +143,10 @@ This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellTyp
 We run the following script to construct regulatory network for each cell cluster (current we support hg38 and mm10):
 
 ```bash
-#cRegulon_grn.py [-h] --name NAME --celltype CELLTYPE --genome GENOME --cores CORES
+#python3 cRegulon.py grn [-h] --name NAME --celltype CELLTYPE --genome GENOME --cores CORES
 for c in `cat ./PseudoBulk/RA_CellType.txt`
 do
-  python3 cRegulon_grn.py -n RA -ct ${c} -g mm10 -p 20
+  python3 cRegulon.py grn -n RA -ct ${c} -g mm10 -p 20
 done
 ```
 This process will produce GRN files (*network.txt, TFTG_regulationScore.txt, TFName.txt, TGName.txt) for each cell cluster in the **Networks** folder (The GRN construction is independent for each cell cluster, we can do it **parallelly**).
@@ -156,13 +155,13 @@ This process will produce GRN files (*network.txt, TFTG_regulationScore.txt, TFN
 We run the following script of cRegulon model:
 If we already know or have some expection of the cRegulon number, we can provide this number to cRegulon. For example, we have 9 cRegulons for RA, then we run this script:
 ```bash
-#cRegulon_model.py [-h] --name NAME --module_number MODULE_NUMBER
-python3 cRegulon_model.py -n RA -mn 9
+#python3 cRegulon.py model [-h] --name NAME --module_number MODULE_NUMBER
+python3 cRegulon.py model -n RA -mn 9
 ```
 If we don't know the cRegulon number, we can provide a range of numbers and cRegulon will use elbow rule to select an optimal number. For example, we guess there may be 4-20 cRegulons for RA, then we run this script:
 ```bash
-#cRegulon_model.py [-h] --name NAME --module_max MODULE_MAX --module_min MODULE_MIN
-python3 cRegulon_model.py -n RA -mmin 4 -mmax 20
+#python3 cRegulon.py model [-h] --name NAME --module_max MODULE_MAX --module_min MODULE_MIN
+python3 cRegulon.py model -n RA -mmin 4 -mmax 20
 ```
 This will output a folder in "Results" with name you specify: "./RA/" <br>
 1. TF combinatorial effects in each cRegulon: ./Results/RA/X.txt <br>
@@ -173,8 +172,8 @@ This will output a folder in "Results" with name you specify: "./RA/" <br>
 ## Annotation mode of cRegulon
 If you only have scRNA-seq data, We run the following script to annotate cells with our pre-computed cRegulons from atlas-level dataset:
 ```bash
-#cRegulon_annot.py [-h] --name NAME --path_rna PATH_RNA --module_number MODULE_NUMBER
-python3 cRegulon_annot.py --name PBMC --path_rna ./example_data/PBMC_scRNA.txt --module_number 12
+#python3 cRegulon.py annot [-h] --name NAME --path_rna PATH_RNA --module_number MODULE_NUMBER
+python3 cRegulon.py annot --name PBMC --path_rna ./example_data/PBMC/PBMC_scRNA.txt --module_number 12
 ```
 ## Citation:
 If you use cRegulon software or cRegulon associated concepts, please cite:
