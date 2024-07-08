@@ -16,7 +16,7 @@ This is cRegulon software: an optimization model an optimization model for model
 
 ## Installing cRegulon with the following command:
 ```bash
-wget https://github.com/fengzhanying/cRegulon/archive/master.zip
+wget https://github.com/SUwonglab/cRegulon/archive/master.zip
 unzip master.zip
 cd cRegulon-master
 wget -O cRegulonData.tar.gz https://figshare.com/ndownloader/files/47503895
