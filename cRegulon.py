@@ -112,7 +112,7 @@ def ReadTXT(path):
 	return row_names, column_names, matrix
 
 def PseudoBulk(name,rna,rna_meta,atac,atac_meta):
-	folder = "./PseudoBulk/"
+	folder = "./PseudoBulk/";os.makedirs("./PseudoBulk/", exist_ok=True)
 	f = open(rna_meta)
 	meta = f.readlines();f.close()
 	cmeta = [meta[i].strip('\n').split('\t')[0] for i in range(len(meta))]
@@ -631,6 +631,7 @@ def CSI(name):
 			TF1.append(TF0[i])
 			TFI.append(i)
 	TG1 = [];TGI = []
+	os.makedirs("./CSI/", exist_ok=True)
 	g = open("./CSI/TGName.txt","w")
 	for i in range(len(TG0)):
 		if TGSTD[i] > 0:
