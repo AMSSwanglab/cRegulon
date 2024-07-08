@@ -125,18 +125,18 @@ The typic cell type meta file (./example_data/RA/RA_scATAC_Cluster.txt) of scATA
 ## cRegulon has three main modes, which are three steps of cRegulon model
 ```bash
 python3 cRegulon.py {prep,grn,model,annot} ...
-
+```
 prep: Preprocessing mode
 grn: GRN mode
 model: Model mode
 annot: Annotation mode
-```
+
 ### Step 1: preprocessing and pseudo bulk (***prep mode***)
 We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for each cell cluster:
 
 ```bash
-#cRegulon_prep.py [-h] [--name NAME] --rna RNA --rna_meta RNA_META --atac ATAC --atac_meta ATAC_META --species SPECIES (human or mouse)
-python3 cRegulon_prep.py --name RA --rna ./example_data/RA/scRNA/ --rna_meta ./example_data/RA/RA_scRNA_Cluster.txt --atac ./example_data/RA/scATAC/ --atac_meta ./example_data/RA/RA_scATAC_Cluster.txt -g mouse
+#cRegulon.py prep [-h] [--name NAME] --rna RNA --rna_meta RNA_META --atac ATAC --atac_meta ATAC_META --species SPECIES (human or mouse)
+python3 cRegulon.py prep --name RA --rna ./example_data/RA/scRNA/ --rna_meta ./example_data/RA/RA_scRNA_Cluster.txt --atac ./example_data/RA/scATAC/ --atac_meta ./example_data/RA/RA_scATAC_Cluster.txt -g mouse
 ```
 This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **PseudoBulk** folder.
 
