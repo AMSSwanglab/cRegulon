@@ -5,10 +5,8 @@ from scipy.sparse import csr_matrix
 import pandas as pd
 import argparse
 import sys
-import numpy as np
 from ismember import ismember
 import scipy.sparse as sparse
-import os
 import scipy.io as scio
 from numpy.matlib import repmat
 import numpy_groupies as npg
@@ -18,8 +16,6 @@ import subprocess
 from multiprocessing import Process
 import pybedtools
 import shutil
-import argparse
-import sys
 from scipy import stats
 from sklearn.decomposition import NMF
 from numpy import linalg as LA
