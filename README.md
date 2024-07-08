@@ -139,7 +139,7 @@ python3 cRegulon.py prep --name RA --rna ./example_data/RA/scRNA/ --rna_meta ./e
 ```
 This process will produce pseudo bulk files (*PS_RNA.txt, *PS_ATAC.txt, *CellType.txt) for each cell cluster in the **PseudoBulk** folder.
 
-### Step 2: GRN construction
+### Step 2: GRN construction (***grn mode***)
 We run the following script to construct regulatory network for each cell cluster (current we support hg38 and mm10):
 
 ```bash
@@ -151,7 +151,7 @@ done
 ```
 This process will produce GRN files (*network.txt, TFTG_regulationScore.txt, TFName.txt, TGName.txt) for each cell cluster in the **Networks** folder (The GRN construction is independent for each cell cluster, we can do it **parallelly**).
 
-### Step 3: Running cRegulon model
+### Step 3: Running cRegulon model (***model mode***)
 We run the following script of cRegulon model:
 If we already know or have some expection of the cRegulon number, we can provide this number to cRegulon. For example, we have 9 cRegulons for RA, then we run this script:
 ```bash
@@ -169,7 +169,7 @@ This will output a folder in "Results" with name you specify: "./RA/" <br>
 3. TF module of each cRegulon: ./Results/RA/*TFModule.txt <br>
 4. Annotation of each cell cluster with cRegulons: ./Results/RA/Annotation/*subnetwork.txt
 
-## Annotation mode of cRegulon
+## Annotation mode of cRegulon (***annot mode***)
 If you only have scRNA-seq data, We run the following script to annotate cells with our pre-computed cRegulons from atlas-level dataset:
 ```bash
 #python3 cRegulon.py annot [-h] --name NAME --path_rna PATH_RNA --module_number MODULE_NUMBER
