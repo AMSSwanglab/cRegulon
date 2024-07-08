@@ -14,7 +14,7 @@ This is cRegulon software: an optimization model an optimization model for model
 9. pybedtools==0.9.0 <br>
 10. scikit-learn==1.4.2 <br>
 
-### Installing cRegulon with the following command:
+## Installing cRegulon with the following command:
 ```bash
 wget https://github.com/fengzhanying/cRegulon/archive/master.zip
 unzip master.zip
@@ -34,7 +34,7 @@ tar -xzvf cRegulonExample.tar.gz
 ./Networks/<br>
 ./Results/***
 
-### Input single cell data of cRegulon
+## Input single cell data of cRegulon
 The typic input file of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
@@ -134,7 +134,7 @@ The typic cell type meta file (./example_data/RA/RA_scATAC_Cluster.txt) of scATA
   </tr>
 </table>
 
-## cRegulon has three main modes, which are three steps of cRegulon model
+## Tutorial: cRegulon has three main modes, which are three steps of cRegulon model
 ```bash
 python3 cRegulon.py {prep,grn,model,annot} ...
 ```
