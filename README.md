@@ -19,12 +19,12 @@ This is cRegulon software: an optimization model an optimization model for model
 wget https://github.com/fengzhanying/cRegulon/archive/master.zip
 unzip master.zip
 cd cRegulon-master
-wget -O cRegulonData.tar.gz [https://figshare.com/ndownloader/files/47503895](https://figshare.com/ndownloader/files/47503895)
+wget -O cRegulonData.tar.gz https://figshare.com/ndownloader/files/47503895
 tar -xzvf cRegulonData.tar.gz
 ```
 ***We also provide an example for cRegulon analysis, which can be downloaded from the following command:***
 ```bash
-wget -O cRegulonExample.tar.gz [https://figshare.com/ndownloader/files/47503904](https://figshare.com/ndownloader/files/47503904)
+wget -O cRegulonExample.tar.gz https://figshare.com/ndownloader/files/47503904
 tar -xzvf cRegulonExample.tar.gz
 ```
 ***After downloading, there will be 5 folders that store raw data, intermediate results, and final results of example: <br>
