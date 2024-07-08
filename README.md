@@ -146,7 +146,7 @@ We run the following script to construct regulatory network for each cell cluste
 #python3 cRegulon.py grn [-h] --name NAME --celltype CELLTYPE --genome GENOME --cores CORES
 for c in `cat ./PseudoBulk/RA_CellType.txt`
 do
-  python3 cRegulon.py grn -n RA -ct ${c} -g mm10 -p 20
+    python3 cRegulon.py grn -n RA -ct ${c} -g mm10 -p 20
 done
 ```
 This process will produce GRN files (*network.txt, TFTG_regulationScore.txt, TFName.txt, TGName.txt) for each cell cluster in the **Networks** folder (The GRN construction is independent for each cell cluster, we can do it **parallelly**).
