@@ -34,7 +34,8 @@ tar -xzvf cRegulonExample.tar.gz
 ./Networks/<br>
 ./Results/***
 
-## Input single cell data of cRegulon
+## Tutorial of cRegulon analysis
+### Input single cell data of cRegulon
 The typic input file of scRNA-seq data is a gene by cell count matrix: <br>
 <table>
   <tr>
@@ -134,7 +135,7 @@ The typic cell type meta file (./example_data/RA/RA_scATAC_Cluster.txt) of scATA
   </tr>
 </table>
 
-## Tutorial: cRegulon has three main modes, which are three steps of cRegulon model
+## cRegulon has three main modes, which are three steps of cRegulon model
 ```bash
 python3 cRegulon.py {prep,grn,model,annot} ...
 ```
