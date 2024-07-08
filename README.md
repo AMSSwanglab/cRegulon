@@ -126,10 +126,10 @@ The typic cell type meta file (./example_data/RA/RA_scATAC_Cluster.txt) of scATA
 ```bash
 python3 cRegulon.py {prep,grn,model,annot} ...
 ```
-prep: Preprocessing mode
-grn: GRN mode
-model: Model mode
-annot: Annotation mode
+prep: Preprocessing mode <br>
+grn: GRN mode <br>
+model: Model mode <br>
+annot: Annotation mode <br>
 
 ### Step 1: preprocessing and pseudo bulk (***prep mode***)
 We run the following script to create pseudo bulk RNA-seq and ATAC-seq data for each cell cluster:
