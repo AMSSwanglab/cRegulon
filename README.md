@@ -12,7 +12,7 @@ This is cRegulon software: an optimization model an optimization model for model
 7. ismember==1.0.2 <br>
 8. mpmath==1.2.1 <br>
 9. pybedtools==0.9.0 <br>
-10. sklearn==0.0 <br>
+10. scikit-learn==1.4.2 <br>
 
 ### Installing cRegulon with the following command:
 ```bash
